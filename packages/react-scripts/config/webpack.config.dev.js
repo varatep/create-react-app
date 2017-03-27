@@ -104,6 +104,17 @@ module.exports = {
   // @remove-on-eject-end
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true,
+            },
+          },
+        ],
+      },
       // Disable require.ensure as it's not a standard language feature.
       { parser: { requireEnsure: false } },
       // First, run the linter.
